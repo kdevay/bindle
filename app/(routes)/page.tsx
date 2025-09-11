@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <PageLayout contentStyles='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
       <About />
-      <nav className='border-y border-dotted md:flex hidden flex-col gap-2 items-center justify-center py-4 w-full'>
+      <nav className='border-y border-dotted md:flex hidden gap-2 items-center justify-center py-4 w-full'>
         <Link className='underline font-bold' href='/checkpoints'>
           CHECKPOINTS
         </Link>
