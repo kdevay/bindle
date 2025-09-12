@@ -12,8 +12,7 @@ const About: React.FC<AboutProps> = () => {
         <p>
           A bindle is a portable pack made by tying belongings in a bandanna or
           spare piece of cloth, commonly associated with American migrant
-          workers and during the Great Depression. Bandanna and bindle share the
-          same root – ‘bhend’ meaning ‘to bind’.
+          workers and during the Great Depression.
         </p>
         <p>
           Just like our namesake, Bindle is a place for gathering resources to
