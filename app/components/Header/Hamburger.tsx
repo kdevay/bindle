@@ -13,7 +13,7 @@ const HamburgerNavMenu: React.FC<HamburgerNavMenuProps> = () => {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/checkpoints', label: 'Checkpoints' },
-    { href: '/location-sharing', label: 'Location Sharing' },
+    { href: '/location-tracking', label: 'Location Tracking' },
     { href: '/navigation-apps', label: 'Navigation Apps' },
   ];
 

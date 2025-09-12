@@ -11,8 +11,8 @@ export default function Home() {
           CHECKPOINTS
         </Link>
         <p className='hidden md:block'>×</p>
-        <Link className='underline font-bold' href='/location-security'>
-          LOCATION SHARING
+        <Link className='underline font-bold' href='/location-tracking'>
+          LOCATION TRACKING
         </Link>
         <p className='hidden md:block'>×</p>
         <Link className='underline font-bold' href='/navigation-apps'>
@@ -77,7 +77,7 @@ export default function Home() {
             CHECKPOINTS
           </Link>
           <p className='hidden md:block'>×</p>
-          <Link className='underline font-bold' href='/location-security'>
+          <Link className='underline font-bold' href='/location-tracking'>
             LOCATION SHARING
           </Link>
           <p className='hidden md:block'>×</p>
