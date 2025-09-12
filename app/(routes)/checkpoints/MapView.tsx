@@ -3,6 +3,9 @@
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { createMapIcon } from './helpers';
+import CloseButton from '@/app/components/CloseButton';
+import MapLegend from './MapLegend';
 
 interface Checkpoint {
   id: number;
@@ -28,28 +31,19 @@ const MapView: React.FC<MapViewProps> = ({
 }) => {
   const mapRef = useRef<L.Map | null>(null);
   const markersRef = useRef<{ [key: number]: L.Marker }>({});
-
+  // Initialize map
   useEffect(() => {
-    // Fix for default markers in Leaflet
-    delete (L.Icon.Default.prototype as any)._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl:
-        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-      iconUrl:
-        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-      shadowUrl:
-        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-    });
-
-    // Initialize map
     if (!mapRef.current) {
       mapRef.current = L.map('map').setView([29.5, -102], 6);
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      // Use proxied tiles instead of direct OSM to protect user IPs
+      L.tileLayer('/api/tiles/{z}/{x}/{y}', {
         attribution: '© OpenStreetMap contributors',
+        maxZoom: 18,
       }).addTo(mapRef.current);
     }
 
+    // Cleanup function
     return () => {
       if (mapRef.current) {
         mapRef.current.remove();
@@ -68,42 +62,35 @@ const MapView: React.FC<MapViewProps> = ({
     });
     markersRef.current = {};
 
-    // Create custom icons
-    const texasIcon = L.divIcon({
-      html: `<div class="w-6 h-6 bg-red-500 border-2 border-white rounded-full shadow-lg flex items-center justify-center">
-               <div class="w-2 h-2 bg-white rounded-full"></div>
-             </div>`,
-      className: 'custom-marker',
-      iconSize: [24, 24],
-      iconAnchor: [12, 12],
+    // Create leaflet icons
+    const texasIcon = createMapIcon({
+      bgColor: 'bg-red-500',
+      borderColor: 'border-white',
+      innerColor: 'bg-white',
+    });
+    const newMexicoIcon = createMapIcon({
+      bgColor: 'bg-blue-500',
+      borderColor: 'border-white',
+      innerColor: 'bg-white',
+    });
+    const selectedIcon = createMapIcon({
+      size: 32,
+      bgColor: 'bg-yellow-400',
+      borderColor: 'border-yellow-600',
+      innerColor: 'bg-white',
+      animate: true,
     });
 
-    const newMexicoIcon = L.divIcon({
-      html: `<div class="w-6 h-6 bg-blue-500 border-2 border-white rounded-full shadow-lg flex items-center justify-center">
-               <div class="w-2 h-2 bg-white rounded-full"></div>
-             </div>`,
-      className: 'custom-marker',
-      iconSize: [24, 24],
-      iconAnchor: [12, 12],
-    });
-
-    const selectedIcon = L.divIcon({
-      html: `<div class="w-8 h-8 bg-yellow-400 border-3 border-yellow-600 rounded-full shadow-lg flex items-center justify-center animate-pulse">
-               <div class="w-3 h-3 bg-yellow-800 rounded-full"></div>
-             </div>`,
-      className: 'custom-marker',
-      iconSize: [32, 32],
-      iconAnchor: [16, 16],
-    });
-
-    // Add markers for each checkpoint
+    // Add leaflet markers for each checkpoint
     checkpoints.forEach(checkpoint => {
       let icon = checkpoint.state === 'Texas' ? texasIcon : newMexicoIcon;
 
+      // Set selected icon if the checkpoint is selected
       if (selectedCheckpoint?.id === checkpoint.id) {
         icon = selectedIcon;
       }
 
+      // Create marker
       const marker = L.marker([checkpoint.lat, checkpoint.lng], { icon })
         .addTo(mapRef.current!)
         .bindPopup(
@@ -135,6 +122,7 @@ const MapView: React.FC<MapViewProps> = ({
           onCheckpointSelect(checkpoint);
         });
 
+      // Add marker to reference
       markersRef.current[checkpoint.id] = marker;
     });
   }, [checkpoints, selectedCheckpoint, onCheckpointSelect]);
@@ -158,26 +146,7 @@ const MapView: React.FC<MapViewProps> = ({
       ></div>
 
       {/* Map Legend */}
-      <div className='absolute top-4 right-4 bg-white p-4 rounded-lg shadow-lg z-[1000]'>
-        <h4 className='font-semibold text-gray-900 mb-3'>Legend</h4>
-        <div className='space-y-2 text-sm'>
-          <div className='flex items-center gap-2'>
-            <div className='w-4 h-4 bg-red-500 rounded-full border border-white'></div>
-            <span>Texas Checkpoints</span>
-          </div>
-          <div className='flex items-center gap-2'>
-            <div className='w-4 h-4 bg-blue-500 rounded-full border border-white'></div>
-            <span>New Mexico Checkpoints</span>
-          </div>
-          <div className='flex items-center gap-2'>
-            <div className='w-4 h-4 bg-yellow-400 rounded-full border border-yellow-600'></div>
-            <span>Selected</span>
-          </div>
-        </div>
-        <div className='mt-3 pt-3 border-t border-gray-200 text-xs text-gray-600'>
-          Click markers or table rows to select
-        </div>
-      </div>
+      <MapLegend />
 
       {/* Checkpoint Counter */}
       <div className='absolute bottom-4 left-4 bg-black bg-opacity-75 text-white px-3 py-2 rounded-lg text-sm z-[1000]'>
