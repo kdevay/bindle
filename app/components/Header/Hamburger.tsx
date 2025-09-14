@@ -22,7 +22,7 @@ const HamburgerNavMenu: React.FC<HamburgerNavMenuProps> = () => {
       <Hamburger toggled={isOpen} toggle={setIsOpen} size={24} />
 
       {isOpen && (
-        <div className='absolute top-[68px] md:top-[58px] right-0 shadow-lg border z-50 bg-naturalLight min-w-48'>
+        <div className='absolute top-[56px] md:top-[74px] right-0 shadow-lg border z-20 bg-naturalLight min-w-48'>
           <nav className='flex flex-col p-4 gap-3'>
             {navLinks.map(link => {
               const isActive = pathname === link.href;

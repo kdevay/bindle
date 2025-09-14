@@ -1,4 +1,4 @@
-import Checkpoint from '../checkpoint';
+import Checkpoint from '../types/checkpoint';
 
 const checkpointsData: Checkpoint[] = [
   // New Mexico
