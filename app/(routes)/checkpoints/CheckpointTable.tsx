@@ -16,10 +16,10 @@ const CheckpointTable: React.FC<CheckpointTableProps> = ({
       <table className='w-full text-sm table-fixed'>
         <thead className='bg-gray-50 sticky top-0'>
           <tr>
-            <th className='px-4 py-3 text-left font-medium w-32 text-gray-900'>
+            <th className='px-4 py-3 text-left font-medium lg:w-32 text-gray-900'>
               State
             </th>
-            <th className='px-4 py-3 text-left font-medium w-32 text-gray-900'>
+            <th className='px-4 py-3 text-left font-medium lg:w-32 text-gray-900'>
               Highway
             </th>
             <th className='px-4 py-3 text-left font-medium text-gray-900'>
@@ -40,7 +40,7 @@ const CheckpointTable: React.FC<CheckpointTableProps> = ({
               }`}
               onClick={() => setSelectedCheckpoint(checkpoint)}
             >
-              <td className='p-4 w-fit min-w-[100px]'>
+              <td className='p-2 md:p-4 w-fit min-w-[100px]'>
                 <span
                   className={`px-2 py-1 text-xs font-medium rounded-full ${
                     checkpoint.state === 'Texas'
@@ -51,10 +51,10 @@ const CheckpointTable: React.FC<CheckpointTableProps> = ({
                   {checkpoint.state}
                 </span>
               </td>
-              <td className='p-4 font-medium text-gray-900'>
+              <td className='p-2 md:p-4 font-medium text-gray-900'>
                 {checkpoint.highway}
               </td>
-              <td className='p-4 text-gray-700 flex flex-wrap'>
+              <td className='p-2 md:p-4 text-gray-700 flex flex-wrap'>
                 {checkpoint.location}
               </td>
             </tr>
