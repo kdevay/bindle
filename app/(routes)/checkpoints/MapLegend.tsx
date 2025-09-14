@@ -5,14 +5,22 @@ import {
   CollapsibleTrigger,
 } from '@/app/components/collapsible';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import cn from '@/app/utils/functions/cn';
 
-interface MapLegendProps {}
+interface MapLegendProps {
+  className?: string;
+}
 
-const MapLegend: React.FC<MapLegendProps> = () => {
-  const [isOpen, setIsOpen] = useState(true);
+const MapLegend: React.FC<MapLegendProps> = ({ className }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='absolute top-4 right-4 bg-white rounded-lg shadow-lg z-[1000] w-[220px]'>
+    <div
+      className={cn(
+        'absolute top-4 right-4 bg-white rounded-lg shadow-lg z-[1000] w-[220px]',
+        className,
+      )}
+    >
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger className='flex items-center justify-between w-full hover:bg-gray-50 p-2 px-4 rounded-full transition-colors'>
           <h4 className='font-semibold text-gray-900'>Legend</h4>
@@ -37,9 +45,6 @@ const MapLegend: React.FC<MapLegendProps> = () => {
               <div className='w-4 h-4 bg-yellow-400 rounded-full border border-yellow-600'></div>
               <span>Selected</span>
             </div>
-          </div>
-          <div className='mt-3 pt-3 border-t border-gray-200 text-xs text-gray-600'>
-            Click markers or table rows to select a checkpoint and view details.
           </div>
         </CollapsibleContent>
       </Collapsible>
