@@ -37,7 +37,7 @@ const DesktopCheckpoints: React.FC<DesktopCheckpointsProps> = ({
   setSelectedCheckpoint,
 }) => {
   return (
-    <div className='hidden lg:flex lg:flex-row h-[800px]'>
+    <div className='hidden lg:flex lg:flex-row h-full'>
       {/* Map Section */}
       <div className='flex-1 relative'>
         <MapView

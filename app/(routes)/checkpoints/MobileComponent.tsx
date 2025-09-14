@@ -44,7 +44,7 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
   setActiveTab,
 }) => {
   return (
-    <div className='lg:hidden rounded-t-xl'>
+    <div className='h-full lg:hidden rounded-t-xl'>
       {/* Mobile Tab Navigation */}
       <div className='bg-white rounded-t-xl shadow-lg'>
         <div className='flex border-b border-gray-200 rounded-t-xl'>

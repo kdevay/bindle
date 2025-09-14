@@ -58,21 +58,20 @@ const Checkpoints: React.FC = () => {
   };
 
   return (
-    <PageLayout contentStyles='w-fullflex flex-col gap-[32px] row-start-2 items-start'>
-      <div className='w-full max-w-7xl mx-auto'>
+    <PageLayout contentStyles='w-full h-screen-minus-header flex flex-col gap-[32px] row-start-2 items-start'>
+      <div className='w-full max-w-7xl mx-auto h-full'>
         <div className='mb-8'>
-          <h1 className='text-4xl font-bold text-gray-900 mb-4'>
+          <h1 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
             Border Checkpoint Locations
           </h1>
           <p className='text-lg text-gray-600'>
-            Interactive map and detailed table of checkpoint locations across
-            New Mexico and Texas. Click markers or table rows to select a
-            checkpoint and view details.
+            Click markers or table rows to select a checkpoint and view details
+            about its location.
           </p>
         </div>
 
         {/* Main Content Container */}
-        <div className='bg-white rounded-xl lg:rounded-xl lg:rounded-t-xl shadow-lg overflow-hidden'>
+        <div className='bg-white rounded-xl lg:rounded-xl lg:rounded-t-xl shadow-lg overflow-hidden h-full'>
           {/* Desktop Layout Component */}
           <DesktopCheckpoints
             checkpoints={filteredAndSortedData}
