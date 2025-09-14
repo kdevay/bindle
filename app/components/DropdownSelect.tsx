@@ -42,11 +42,11 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
   };
 
   return (
-    <div className={cn('relative min-w-[200px]', className)}>
+    <div className={cn('relative w-fit md:min-w-[200px]', className)}>
       {/* Trigger Button */}
       <button
         ref={triggerRef}
-        className='flex items-center justify-between w-full hover:bg-gray-50 p-2 px-4 transition-colors rounded-lg '
+        className='w-fit gap-2 flex items-center justify-between text-sm hover:bg-gray-50 p-2 px-0 md:px-4 transition-colors rounded-lg '
         aria-label={`open or close ${ariaOptionType} option listbox`}
         aria-expanded={isOpen}
         aria-haspopup='listbox'
