@@ -22,19 +22,22 @@ interface MapViewProps {
   checkpoints: Checkpoint[];
   selectedCheckpoint: Checkpoint | null;
   onCheckpointSelect: (checkpoint: Checkpoint) => void;
+  mapId?: string; // Add mapId prop
 }
 
 const MapView: React.FC<MapViewProps> = ({
   checkpoints,
   selectedCheckpoint,
   onCheckpointSelect,
+  mapId = 'map', // Default fallback
 }) => {
   const mapRef = useRef<L.Map | null>(null);
   const markersRef = useRef<{ [key: number]: L.Marker }>({});
+
   // Initialize map
   useEffect(() => {
     if (!mapRef.current) {
-      mapRef.current = L.map('map').setView([29.5, -102], 6);
+      mapRef.current = L.map(mapId).setView([29.5, -102], 6);
 
       // Use proxied tiles instead of direct OSM to protect user IPs
       L.tileLayer('/api/tiles/{z}/{x}/{y}', {
@@ -50,7 +53,7 @@ const MapView: React.FC<MapViewProps> = ({
         mapRef.current = null;
       }
     };
-  }, []);
+  }, [mapId]); // Add mapId to dependency array
 
   // Update markers when checkpoints change
   useEffect(() => {
@@ -95,13 +98,13 @@ const MapView: React.FC<MapViewProps> = ({
         .addTo(mapRef.current!)
         .bindPopup(
           `
-          <div class="p-3 min-w-[250px]">
-            <h4 class="font-bold text-lg text-gray-900 mb-2">${
-              checkpoint.highway
-            }</h4>
+          <div class=" min-w-[250px]">
+          <h4 class="font-bold text-lg text-gray-900 mb-2">
+          ${checkpoint.state} Checkpoint
+          </h4>
             <div class="space-y-1 text-sm">
-              <div><span class="font-medium">State:</span> ${
-                checkpoint.state
+              <div><span class="font-medium">Highway:</span> ${
+                checkpoint.highway
               }</div>
               <div><span class="font-medium">Location:</span> ${
                 checkpoint.location
@@ -141,18 +144,12 @@ const MapView: React.FC<MapViewProps> = ({
   return (
     <div className='relative w-full h-full'>
       <div
-        id='map'
-        className='w-full h-full rounded-l-xl lg:rounded-r-none'
+        id={mapId} // Use the dynamic mapId
+        className='w-full h-full'
       ></div>
 
       {/* Map Legend */}
-      <MapLegend />
-
-      {/* Checkpoint Counter */}
-      <div className='absolute bottom-4 left-4 bg-black bg-opacity-75 text-white px-3 py-2 rounded-lg text-sm z-[1000]'>
-        {checkpoints.length} checkpoint{checkpoints.length !== 1 ? 's' : ''}{' '}
-        displayed
-      </div>
+      <MapLegend className='hidden lg:block' />
     </div>
   );
 };
