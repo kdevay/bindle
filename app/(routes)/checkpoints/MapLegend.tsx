@@ -17,7 +17,7 @@ const MapLegend: React.FC<MapLegendProps> = ({ className }) => {
   return (
     <div
       className={cn(
-        'absolute top-4 right-4 bg-white rounded-lg shadow-lg z-[1000] w-[220px]',
+        'absolute top-4 right-4 bg-white rounded-lg shadow-lg z-10 w-[220px]',
         className,
       )}
     >
