@@ -57,6 +57,7 @@ const ComprehensiveSecurityChecklist: React.FC<
               have. (
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://support.apple.com/en-us/guide/mac-help/mh17159/mac'
                   target='_blank'
                   rel='noopener'
@@ -67,12 +68,13 @@ const ComprehensiveSecurityChecklist: React.FC<
               ,{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://www.veracrypt.fr/en/Home.html'
                   target='_blank'
                   rel='noopener'
                 >
                   VeraCrypt for windows/linux users
-                </a>{' '}
+                </a>
               </span>
               )
             </li>
@@ -100,12 +102,20 @@ const ComprehensiveSecurityChecklist: React.FC<
             <li>Use unique, strong passwords for every account</li>
             <li>
               Use a{' '}
-              <a href='https://bitwarden.com/resources/zero-knowledge-encryption/'>
+              <a
+                className='font-medium underline hover:cursor'
+                href='https://bitwarden.com/resources/zero-knowledge-encryption/'
+              >
                 zero-knowledge encrypted
               </a>{' '}
               password manager, such as{' '}
               <span>
-                <a href='https://bitwarden.com' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://bitwarden.com'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Bitwarden
                 </a>
               </span>
@@ -115,14 +125,27 @@ const ComprehensiveSecurityChecklist: React.FC<
             </li>
             <li>
               For 2FA, use authenticator apps over SMS (
-              <a href='https://www.authy.com/'>Authy</a>,
-              <a href='https://1password.com/'>1Password</a>, etc.)
+              <a
+                className='font-medium underline hover:cursor'
+                href='https://www.authy.com/'
+              >
+                Authy
+              </a>
+              ,
+              <a
+                className='font-medium underline hover:cursor'
+                href='https://1password.com/'
+              >
+                1Password
+              </a>
+              , etc.)
             </li>
             <li>Regularly audit and delete unused accounts</li>
             <li>
               Check if your email has appeared in data breaches:{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://haveibeenpwned.com'
                   target='_blank'
                   rel='noopener'
@@ -140,13 +163,23 @@ const ComprehensiveSecurityChecklist: React.FC<
             <li>
               Consider encrypted email providers, such as{' '}
               <span>
-                <a href='https://proton.me/mail' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://proton.me/mail'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Proton Mail
                 </a>
               </span>
               , or{' '}
               <span>
-                <a href='https://tutanota.com' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://tutanota.com'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Tutanota
                 </a>
               </span>
@@ -172,13 +205,23 @@ const ComprehensiveSecurityChecklist: React.FC<
             <li>
               Use encrypted messaging apps for sensitive conversations, such as{' '}
               <span>
-                <a href='https://signal.org' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://signal.org'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Signal
                 </a>
               </span>
               , or{' '}
               <span>
-                <a href='https://wire.com' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://wire.com'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Wire
                 </a>
               </span>
@@ -197,6 +240,7 @@ const ComprehensiveSecurityChecklist: React.FC<
               Use privacy‑focused browsers (
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://www.mozilla.org/firefox/'
                   target='_blank'
                   rel='noopener'
@@ -206,7 +250,12 @@ const ComprehensiveSecurityChecklist: React.FC<
               </span>{' '}
               or{' '}
               <span>
-                <a href='https://brave.com' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://brave.com'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Brave
                 </a>
               </span>
@@ -216,6 +265,7 @@ const ComprehensiveSecurityChecklist: React.FC<
               Install privacy extensions, such as{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://github.com/gorhill/uBlock'
                   target='_blank'
                   rel='noopener'
@@ -226,6 +276,7 @@ const ComprehensiveSecurityChecklist: React.FC<
               ,{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://privacybadger.org'
                   target='_blank'
                   rel='noopener'
@@ -237,13 +288,19 @@ const ComprehensiveSecurityChecklist: React.FC<
             <li>
               Use search engines that don't track you or sell your data, such as{' '}
               <span>
-                <a href='https://duckduckgo.com' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://duckduckgo.com'
+                  target='_blank'
+                  rel='noopener'
+                >
                   DuckDuckGo
                 </a>
               </span>
               , or{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://www.startpage.com'
                   target='_blank'
                   rel='noopener'
@@ -255,13 +312,23 @@ const ComprehensiveSecurityChecklist: React.FC<
             <li>
               Browse with a VPN, especially on untrusted networks{' '}
               <span>
-                <a href='https://mullvad.net' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://mullvad.net'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Mullvad
                 </a>
               </span>
               ,{' '}
               <span>
-                <a href='https://proton.me/vpn' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://proton.me/vpn'
+                  target='_blank'
+                  rel='noopener'
+                >
                   ProtonVPN
                 </a>
               </span>
@@ -289,6 +356,7 @@ const ComprehensiveSecurityChecklist: React.FC<
               Use end‑to‑end encrypted cloud storage options, such as{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://www.pcloud.com/crypto.html'
                   target='_blank'
                   rel='noopener'
@@ -298,13 +366,19 @@ const ComprehensiveSecurityChecklist: React.FC<
               </span>
               ,{' '}
               <span>
-                <a href='https://tresorit.com' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://tresorit.com'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Tresorit
                 </a>
               </span>
               ,{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://proton.me/drive'
                   target='_blank'
                   rel='noopener'
@@ -335,6 +409,7 @@ const ComprehensiveSecurityChecklist: React.FC<
               Opt out of people‑finder/data broker sites — examples:{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://www.whitepages.com'
                   target='_blank'
                   rel='noopener'
@@ -344,7 +419,12 @@ const ComprehensiveSecurityChecklist: React.FC<
               </span>
               ,{' '}
               <span>
-                <a href='https://www.spokeo.com' target='_blank' rel='noopener'>
+                <a
+                  className='font-medium underline hover:cursor'
+                  href='https://www.spokeo.com'
+                  target='_blank'
+                  rel='noopener'
+                >
                   Spokeo
                 </a>
               </span>
@@ -369,6 +449,7 @@ const ComprehensiveSecurityChecklist: React.FC<
               Use{' '}
               <span>
                 <a
+                  className='font-medium underline hover:cursor'
                   href='https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access#WPA3'
                   target='_blank'
                   rel='noopener'
@@ -382,11 +463,19 @@ const ComprehensiveSecurityChecklist: React.FC<
               internet traffic.
               <ul>
                 <li>
-                  <a href='https://support.apple.com/en-us/102766'>guide</a>
+                  <a
+                    className='font-medium underline hover:cursor'
+                    href='https://support.apple.com/en-us/102766'
+                  >
+                    guide
+                  </a>
                   for mac users
                 </li>
                 <li>
-                  <a href='https://support.microsoft.com/en-us/windows/faster-and-more-secure-wi-fi-in-windows-26177a28-38ed-1a8e-7eca-66f24dc63f09'>
+                  <a
+                    className='font-medium underline hover:cursor'
+                    href='https://support.microsoft.com/en-us/windows/faster-and-more-secure-wi-fi-in-windows-26177a28-38ed-1a8e-7eca-66f24dc63f09'
+                  >
                     guide
                   </a>
                   for windows users
@@ -454,7 +543,12 @@ const ComprehensiveSecurityChecklist: React.FC<
                 <li>
                   might be available for free with your bank, but there are
                   subscription services you can use like{' '}
-                  <a href='https://privacy.com' target='_blank' rel='noopener'>
+                  <a
+                    className='font-medium underline hover:cursor'
+                    href='https://privacy.com'
+                    target='_blank'
+                    rel='noopener'
+                  >
                     Privacy.com
                   </a>
                 </li>
@@ -463,7 +557,12 @@ const ComprehensiveSecurityChecklist: React.FC<
             <li>
               Avoid saving payment methods in browsers or websites; Instead, use
               password‑protected autofill services like{' '}
-              <a href='https://bitwarden.com' target='_blank' rel='noopener'>
+              <a
+                className='font-medium underline hover:cursor'
+                href='https://bitwarden.com'
+                target='_blank'
+                rel='noopener'
+              >
                 Bitwarden
               </a>
               .
