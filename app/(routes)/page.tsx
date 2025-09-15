@@ -2,6 +2,7 @@ import Link from 'next/link';
 import PageLayout from '../components/PageLayout';
 import About from '../components/About';
 import NavBar from '../components/NavBar';
+import NavFooter from '../components/NavFooter';
 
 export default function Home() {
   return (
@@ -61,21 +62,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <footer className='border-t border-dotted  md:hidden py-4 w-full'>
-        <nav className='flex flex-col gap-2 items-start justify-between'>
-          <Link className='underline font-bold' href='/checkpoints'>
-            CHECKPOINTS
-          </Link>
-          <p className='hidden md:block'>×</p>
-          <Link className='underline font-bold' href='/location-tracking'>
-            LOCATION SHARING
-          </Link>
-          <p className='hidden md:block'>×</p>
-          <Link className='underline font-bold' href='/navigation-apps'>
-            NAVIGATION APPS
-          </Link>
-        </nav>
-      </footer>
+      <NavFooter currentPage='home' />
     </PageLayout>
   );
 }
