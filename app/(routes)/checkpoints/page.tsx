@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react';
 import PageLayout from '@/app/components/PageLayout';
 import Checkpoint from '@/app/utils/types/checkpoint';
-import checkpointsData from '@/app/utils/data/checkpoints';
+import checkpointsData from '@/app/utils/constants/checkpoints';
 import SelectedCheckpoint from './SelectedCheckpoint';
 import DesktopCheckpoints from './DesktopComponent';
 import MobileCheckpoints from './MobileComponent';
