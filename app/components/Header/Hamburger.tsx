@@ -3,19 +3,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Hamburger from 'hamburger-react';
+import navLinks from '@/app/utils/constants/routes';
 
 interface HamburgerNavMenuProps {}
 
 const HamburgerNavMenu: React.FC<HamburgerNavMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/checkpoints', label: 'Checkpoints' },
-    { href: '/location-tracking', label: 'Location Tracking' },
-    { href: '/navigation-apps', label: 'Navigation Apps' },
-  ];
 
   return (
     <div className='relative'>
