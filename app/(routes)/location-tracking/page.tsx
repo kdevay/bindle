@@ -1,5 +1,5 @@
 import PageLayout from '@/app/components/PageLayout';
-import locationSecurityChecklist from '@/app/utils/data/locationSecurityChecklist';
+import locationSecurityChecklist from '@/app/utils/constants/locationSecurityChecklist';
 
 interface LocationTrackingProps {}
 
