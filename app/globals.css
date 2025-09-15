@@ -169,6 +169,15 @@ body {
   /* background-color: #a2d6e0;
   background-image: url('https://www.transparenttextures.com/patterns/tex2res5.png'); */
 }
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
 
 /* Override Leaflet's z-index values to ensure header stays on top */
 .leaflet-container {
