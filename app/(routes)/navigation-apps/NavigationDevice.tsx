@@ -12,9 +12,9 @@ interface NavigationDeviceProps {
 const NavigationDevice: React.FC<NavigationDeviceProps> = ({ device }) => {
   return (
     <section>
-      <h3 className='text-2xl font-bold'>
+      <h4 className='text-xl font-medium pt-4'>
         <strong>{device.name}</strong>
-      </h3>
+      </h4>
       <ul>
         <li>
           <strong>Device Cost:</strong> {device.cost || device.deviceCost}

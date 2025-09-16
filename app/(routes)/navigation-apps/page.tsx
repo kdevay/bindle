@@ -15,7 +15,7 @@ const NavigationApps: React.FC<NavigationAppsProps> = () => {
   return (
     <PageLayout
       heading='How to get around without being tracked'
-      contentStyles='flex flex-col gap-4 row-start-2 items-center sm:items-start'
+      contentStyles='flex flex-col gap-4 items-start sm:items-start'
     >
       <p>
         The two most popular navigation apps, Google Maps and Apple Maps,
@@ -56,7 +56,7 @@ const NavigationApps: React.FC<NavigationAppsProps> = () => {
         <NavigationApp key={app.name} app={app} />
       ))}
 
-      <h2 className='text-2xl font-bold'>{StandaloneGPSDevices.title}</h2>
+      <h2 className='text-2xl font-bold pt-4'>{StandaloneGPSDevices.title}</h2>
       <p>{StandaloneGPSDevices.description}</p>
       <ProConTable
         pros={StandaloneGPSDevices.pros}
@@ -67,7 +67,7 @@ const NavigationApps: React.FC<NavigationAppsProps> = () => {
         <NavigationDevice key={device.name} device={device} />
       ))}
 
-      <h2 className='text-2xl font-bold'>Summary</h2>
+      <h2 className='text-2xl font-bold pt-4'>Summary</h2>
 
       <p>
         For privacy-conscious navigation, offline apps like OsmAnd or Organic
