@@ -9,9 +9,10 @@ import cn from '@/app/utils/functions/cn';
 
 interface MapLegendProps {
   className?: string;
+  triggerClass?: string;
 }
 
-const MapLegend: React.FC<MapLegendProps> = ({ className }) => {
+const MapLegend: React.FC<MapLegendProps> = ({ className, triggerClass }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,7 +23,12 @@ const MapLegend: React.FC<MapLegendProps> = ({ className }) => {
       )}
     >
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        <CollapsibleTrigger className='flex items-center justify-between w-full hover:bg-gray-50 p-2 px-4 rounded-full transition-colors'>
+        <CollapsibleTrigger
+          className={cn(
+            'flex items-center justify-between w-full hover:bg-gray-50 p-2 px-4 rounded-full transition-colors',
+            triggerClass,
+          )}
+        >
           <h4 className='font-semibold text-gray-900'>Legend</h4>
           {isOpen ? (
             <ChevronUp className='h-4 w-4 text-gray-600 flex-shrink-0' />

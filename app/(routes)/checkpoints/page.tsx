@@ -57,7 +57,7 @@ const Checkpoints: React.FC = () => {
   };
 
   return (
-    <PageLayout contentStyles='w-full h-screen-minus-header flex flex-col gap-[32px] row-start-2 items-start'>
+    <PageLayout contentStyles='w-full h-full flex flex-col gap-[32px] row-start-2 items-start pb-8'>
       <div className='w-full max-w-7xl mx-auto h-full'>
         <div className='mb-8'>
           <h1 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
