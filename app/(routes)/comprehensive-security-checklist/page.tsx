@@ -13,10 +13,10 @@ const ComprehensiveSecurityChecklist: React.FC<
     sourcesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <PageLayout contentStyles='flex flex-col gap-4'>
-      <h1 className='text-2xl md:text-3xl font-bold'>
-        Comprehensive Security Checklist
-      </h1>
+    <PageLayout
+      heading='Comprehensive Security Checklist'
+      contentStyles='flex flex-col gap-4'
+    >
       <p>
         This list is an attempt to consolidate best practices (outlined by
         credible security resources such as EFF and DDF) for digital security

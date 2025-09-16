@@ -5,11 +5,10 @@ interface LocationTrackingProps {}
 
 const LocationTracking: React.FC<LocationTrackingProps> = () => {
   return (
-    <PageLayout contentStyles='flex flex-col gap-[32px] row-start-2 items-center sm:items-start'>
-      <h2 className='text-2xl font-bold'>
-        Why should I care about location tracking?
-      </h2>
-
+    <PageLayout
+      heading='Why should I care about location tracking?'
+      contentStyles='flex flex-col gap-[32px] row-start-2 items-center sm:items-start'
+    >
       <p>
         Massive amounts of smartphone location data are quietly harvested
         through everyday apps and sold by data brokers, creating powerful tools
