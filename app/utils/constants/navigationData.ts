@@ -1,7 +1,9 @@
 const OpenSourceMaps = {
   title: 'Open Source Maps',
-  description:
+  description: [
     "Open source software is licensed as free to use, modify, and distribute, which ensures the technology remains freely accessible to the public. One of the main benefits of using open source technology is that it can be audited by anyone, including independent security researchers and privacy advocates, so you don't have to trust a company's claims about what their software actually does.",
+    "While open source maps are vital for privacy, they do have a few drawbacks compared to the mainstream map apps. Below we'll go over the pros and cons of open source maps, followed by a breakdown of our favorite open source map apps.",
+  ],
   pros: [
     'Store maps locally on your device',
     'No location data collection or sharing',
@@ -18,7 +20,8 @@ const OpenSourceMaps = {
 
 const StandaloneGPSDevices = {
   title: 'Standalone GPS Devices',
-  description: null,
+  description:
+    'Standalone GPS devices are a great way to navigate without being tracked. They are not connected to the internet and do not collect or share your location data. They are also more reliable than mainstream map apps since they are not dependent on wifi or cellular data to function.',
   pros: [
     "Cannot be tracked since there's no data connection",
     'Always works without draining phone battery',

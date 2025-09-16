@@ -45,14 +45,12 @@ const NavigationApps: React.FC<NavigationAppsProps> = () => {
         </ul>
       </div>
 
-      <h2 className='text-2xl font-bold'>{OpenSourceMaps.title}</h2>
-      <p>{OpenSourceMaps.description}</p>
+      <h2 className='text-2xl font-bold pt-4'>{OpenSourceMaps.title}</h2>
+      {OpenSourceMaps.description.map((description, index) => (
+        <p key={index}>{description}</p>
+      ))}
 
       <ProConTable pros={OpenSourceMaps.pros} cons={OpenSourceMaps.cons} />
-
-      <h3 className='text-2xl font-medium italic'>
-        Here’s a breakdown of our favorite open source map apps:
-      </h3>
 
       {navigationApps.map(app => (
         <NavigationApp key={app.name} app={app} />
