@@ -1,24 +1,15 @@
 import Link from 'next/link';
 import PageLayout from '../components/PageLayout';
 import About from '../components/About';
+import NavBar from '../components/NavBar';
+import NavFooter from '../components/NavFooter';
 
 export default function Home() {
   return (
     <PageLayout contentStyles='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
       <About />
-      <nav className='border-y border-dotted md:flex hidden gap-2 items-center justify-center py-4 w-full'>
-        <Link className='underline font-bold' href='/checkpoints'>
-          CHECKPOINTS
-        </Link>
-        <p className='hidden md:block'>×</p>
-        <Link className='underline font-bold' href='/location-tracking'>
-          LOCATION TRACKING
-        </Link>
-        <p className='hidden md:block'>×</p>
-        <Link className='underline font-bold' href='/navigation-apps'>
-          NAVIGATION APPS
-        </Link>
-      </nav>
+      <NavBar currentPage='home' />
+
       <div className='flex flex-col gap-4'>
         <h2 className='text-2xl font-bold'>Need a travel bandanna?</h2>
         <p>
@@ -71,21 +62,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <footer className='border-t border-dotted  md:hidden py-4 w-full'>
-        <nav className='flex flex-col gap-2 items-start justify-between'>
-          <Link className='underline font-bold' href='/checkpoints'>
-            CHECKPOINTS
-          </Link>
-          <p className='hidden md:block'>×</p>
-          <Link className='underline font-bold' href='/location-tracking'>
-            LOCATION SHARING
-          </Link>
-          <p className='hidden md:block'>×</p>
-          <Link className='underline font-bold' href='/navigation-apps'>
-            NAVIGATION APPS
-          </Link>
-        </nav>
-      </footer>
+      <NavFooter currentPage='home' />
     </PageLayout>
   );
 }
