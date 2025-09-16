@@ -38,8 +38,11 @@
     background-color: #bce9f2;
     background-image: url('https://www.transparenttextures.com/patterns/tex2res5.png');
   }
-  .screen-minus-header {
+  .h-screen-minus-header {
     @apply h-[calc(100vh-var(--header-height-sm))] md:h-[calc(100vh-var(--header-height-md))];
+  }
+  .h-mobileMap {
+    @apply h-[calc(100vh-var(--header-height-sm)-var(--map-controls-height))];
   }
 }
 
@@ -81,7 +84,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --header-height-sm: 81px;
   --header-height-md: 113px;
-  /* ... other variables */
+  --map-controls-height: 144px;
 }
 
 :root {
