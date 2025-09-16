@@ -7,6 +7,7 @@ import Checkpoint from '@/app/utils/types/checkpoint';
 import dynamic from 'next/dynamic';
 import { MapIcon, TableIcon } from 'lucide-react';
 import MapLegend from './MapLegend';
+import MapTab from './MapTab';
 
 // Dynamically import map component to avoid SSR issues
 const MapView = dynamic(() => import('@/app/(routes)/checkpoints/MapView'), {
@@ -63,7 +64,7 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
         </div>
       </div>
       {/* Search - Always visible on mobile */}
-      <div className='p-4 bg-gray-50 border-b border-gray-200'>
+      <div className='p-2 bg-gray-50 border-b border-gray-200'>
         <Input
           type='text'
           placeholder='Search by state, highway, or location...'
@@ -73,7 +74,10 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
         />
       </div>
       {activeTab !== 'table' && (
-        <MapLegend className='w-full static bg-gray-50' />
+        <MapLegend
+          className='w-full static bg-gray-50'
+          triggerClass='p-2 pl-4'
+        />
       )}
       {/* Sort and Filters - Only visible for table view */}
       {activeTab === 'table' && (
@@ -97,7 +101,7 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
         </div>
       )}
       {/* Tab Content */}
-      <div className='min-h-[500px]'>
+      <div className='h-mobileMap max-h-[500px]'>
         {activeTab === 'map' && (
           <div key='mobile-map' className='h-[500px] relative'>
             <MapView
@@ -109,7 +113,7 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
           </div>
         )}
         {activeTab === 'table' && (
-          <div className='max-h-[500px] overflow-hidden'>
+          <div className='h-mobileMap max-h-[500px] overflow-hidden'>
             <CheckpointTable
               checkpointData={checkpoints}
               selectedCheckpoint={selectedCheckpoint}
