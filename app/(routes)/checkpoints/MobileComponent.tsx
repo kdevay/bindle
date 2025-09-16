@@ -48,32 +48,18 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
       {/* Mobile Tab Navigation */}
       <div className='bg-white rounded-t-xl shadow-lg'>
         <div className='flex border-b border-gray-200 rounded-t-xl'>
-          <button
-            onClick={() => setActiveTab('map')}
-            className={`flex items-center justify-center gap-2 py-4 px-6 w-full font-medium transition-colors rounded-tl-xl ${
-              activeTab === 'map'
-                ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
-                : 'text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            <MapIcon />
-            <p className='flex flex-shrink-0 flex-grow-0'>
-              Map <span className='hidden md:block'>View</span>
-            </p>
-          </button>
-          <button
-            onClick={() => setActiveTab('table')}
-            className={`flex items-center justify-center gap-2 py-4 px-6 w-full font-medium transition-colors rounded-tr-xl ${
-              activeTab === 'table'
-                ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
-                : 'text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            <TableIcon />
-            <p className='flex flex-shrink-0 flex-grow-0'>
-              Table <span className='hidden md:block'>View</span>
-            </p>
-          </button>
+          <MapTab
+            activeTab={activeTab}
+            setActiveTab={() => setActiveTab('map')}
+            tabIcon={<MapIcon />}
+            tabSlug='map'
+          />
+          <MapTab
+            activeTab={activeTab}
+            setActiveTab={() => setActiveTab('table')}
+            tabIcon={<TableIcon />}
+            tabSlug='table'
+          />
         </div>
       </div>
       {/* Search - Always visible on mobile */}
