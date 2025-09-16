@@ -13,8 +13,8 @@ const NavigationApp: React.FC<NavigationAppProps> = ({ app }) => {
     <section>
       <h4>
         <a
-          className='text-xl font-bold underline hover:cursor'
-          href='https://osmand.net/'
+          className='text-xl font-bold underline hover:cursor pt-4'
+          href={app.downloadUrl}
         >
           {app.name}
         </a>
