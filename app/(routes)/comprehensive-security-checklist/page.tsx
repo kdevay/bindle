@@ -26,8 +26,10 @@ const ComprehensiveSecurityChecklist: React.FC<
       </p>
 
       <section>
-        <h2 className='text-xl md:text-2xl font-bold'>Devices</h2>
-        <hr className='w-full border-1 border-black' />
+        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
+          Devices
+        </h2>
+
         <div className='mb-2'>
           <h3 className='text-lg md:text-xl font-bold'>Smart Phones</h3>
           <ul>
@@ -92,8 +94,10 @@ const ComprehensiveSecurityChecklist: React.FC<
       </section>
 
       <section>
-        <h2 className='text-xl md:text-2xl font-bold'>Accounts</h2>
-        <hr className='w-full border-1 border-black' />
+        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
+          Accounts
+        </h2>
+
         <div className='mb-2'>
           <h3 className='text-lg md:text-xl font-bold'>
             Passwords &amp; Authentication
@@ -195,10 +199,10 @@ const ComprehensiveSecurityChecklist: React.FC<
       </section>
 
       <section>
-        <h2 className='text-xl md:text-2xl font-bold'>
+        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
           Platforms &amp; Services
         </h2>
-        <hr className='w-full border-1 border-black' />
+
         <div className='mb-2'>
           <h3 className='text-lg md:text-xl font-bold'>Communication</h3>
           <ul>
@@ -439,8 +443,10 @@ const ComprehensiveSecurityChecklist: React.FC<
       </section>
 
       <section>
-        <h2 className='text-xl md:text-2xl font-bold'>Network Security</h2>
-        <hr className='w-full border-1 border-black' />
+        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
+          Network Security
+        </h2>
+
         <div className='mb-2'>
           <h3 className='text-lg md:text-xl font-bold'>Home</h3>
           <ul>
@@ -522,8 +528,10 @@ const ComprehensiveSecurityChecklist: React.FC<
       </section>
 
       <section>
-        <h2 className='text-xl md:text-2xl font-bold'>Financial Security</h2>
-        <hr className='w-full border-1 border-black' />
+        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
+          Financial Security
+        </h2>
+
         <div className='mb-2'>
           <ul>
             <li>Use cash or prepaid cards for sensitive purchases</li>
@@ -576,10 +584,10 @@ const ComprehensiveSecurityChecklist: React.FC<
       </section>
 
       <section>
-        <h2 className='text-xl md:text-2xl font-bold'>
+        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
           Emergency Preparedness
         </h2>
-        <hr className='w-full border-1 border-black' />
+
         <div className='mb-2'>
           <h3 className='text-lg md:text-xl font-bold'>Data Protection</h3>
           <ul>
@@ -611,10 +619,10 @@ const ComprehensiveSecurityChecklist: React.FC<
       </p>
 
       <section ref={sourcesRef}>
-        <h2 className='text-xl md:text-2xl font-bold'>
+        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
           Sources &amp; Further Reading
         </h2>
-        <hr className='w-full border-1 border-black' />
+
         <ul>
           <li>
             <a

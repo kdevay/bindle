@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import navLinks, { NavSlug } from '../utils/constants/routes';
+import { Fragment } from 'react';
 
 interface NavBarProps {
   currentPage: NavSlug;
@@ -10,14 +11,14 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage }) => {
   const links = navLinks.filter(link => link.slug !== currentPage);
 
   return (
-    <nav className='border-y border-dotted md:flex hidden gap-2 items-center justify-center py-4 w-full'>
+    <nav className='border-y border-black border-dotted py-4 w-full hidden md:flex gap-2 items-center justify-center'>
       {links.map((link, index) => (
-        <div key={`${link.href}-mid-nav`}>
+        <Fragment key={`${link.href}-mid-nav`}>
           <Link className='underline font-bold' href={link.href}>
             {link.label}
           </Link>
           {index < links.length - 1 && <p className='hidden md:block'>×</p>}
-        </div>
+        </Fragment>
       ))}
     </nav>
   );
