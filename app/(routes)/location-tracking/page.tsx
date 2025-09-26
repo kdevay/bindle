@@ -18,7 +18,6 @@ const LocationTracking: React.FC<LocationTrackingProps> = () => {
           width={774}
           height={574}
         />
-        {/* <div className='w-full md:w-1/2 bg-black' /> */}
         <div className='flex flex-col gap-4'>
           <p className='w-full text-lg'>
             Massive amounts of smartphone location data are quietly harvested

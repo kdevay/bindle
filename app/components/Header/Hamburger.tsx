@@ -13,6 +13,7 @@ const HamburgerNavMenu: React.FC<HamburgerNavMenuProps> = () => {
 
   return (
     <div className='relative'>
+      {/* Hamburger menu icon that animates into a close icon when clicked */}
       <Hamburger toggled={isOpen} toggle={setIsOpen} size={24} />
 
       {isOpen && (

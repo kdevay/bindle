@@ -9,7 +9,11 @@ import { MapIcon, TableIcon } from 'lucide-react';
 import MapLegend from './MapLegend';
 import MapTab from './MapTab';
 
-// Dynamically import map component to avoid SSR issues
+/*
+Dynamically import map and Disable Server Side Rendering for MapView because:
+  - Leaflet needs window/document and DOM, which don't exist on server
+  - Prevents "ReferenceError: window is not defined" during SSR
+*/
 const MapView = dynamic(() => import('@/app/(routes)/checkpoints/MapView'), {
   ssr: false,
   loading: () => (
