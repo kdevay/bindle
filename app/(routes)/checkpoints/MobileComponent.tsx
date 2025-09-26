@@ -7,6 +7,7 @@ import Checkpoint from '@/app/utils/types/checkpoint';
 import dynamic from 'next/dynamic';
 import { MapIcon, TableIcon } from 'lucide-react';
 import MapLegend from './MapLegend';
+import MapTab from './MapTab';
 
 /*
 Dynamically import map and Disable Server Side Rendering for MapView because:
@@ -52,36 +53,22 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
       {/* Mobile Tab Navigation */}
       <div className='bg-white rounded-t-xl shadow-lg'>
         <div className='flex border-b border-gray-200 rounded-t-xl'>
-          <button
-            onClick={() => setActiveTab('map')}
-            className={`flex items-center justify-center gap-2 py-4 px-6 w-full font-medium transition-colors rounded-tl-xl ${
-              activeTab === 'map'
-                ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
-                : 'text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            <MapIcon />
-            <p className='flex flex-shrink-0 flex-grow-0'>
-              Map <span className='hidden md:block'>View</span>
-            </p>
-          </button>
-          <button
-            onClick={() => setActiveTab('table')}
-            className={`flex items-center justify-center gap-2 py-4 px-6 w-full font-medium transition-colors rounded-tr-xl ${
-              activeTab === 'table'
-                ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
-                : 'text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            <TableIcon />
-            <p className='flex flex-shrink-0 flex-grow-0'>
-              Table <span className='hidden md:block'>View</span>
-            </p>
-          </button>
+          <MapTab
+            activeTab={activeTab}
+            setActiveTab={() => setActiveTab('map')}
+            tabIcon={<MapIcon />}
+            tabSlug='map'
+          />
+          <MapTab
+            activeTab={activeTab}
+            setActiveTab={() => setActiveTab('table')}
+            tabIcon={<TableIcon />}
+            tabSlug='table'
+          />
         </div>
       </div>
       {/* Search - Always visible on mobile */}
-      <div className='p-4 bg-gray-50 border-b border-gray-200'>
+      <div className='p-2 bg-gray-50 border-b border-gray-200'>
         <Input
           type='text'
           placeholder='Search by state, highway, or location...'
@@ -91,7 +78,10 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
         />
       </div>
       {activeTab !== 'table' && (
-        <MapLegend className='w-full static bg-gray-50' />
+        <MapLegend
+          className='w-full static bg-gray-50'
+          triggerClass='p-2 pl-4'
+        />
       )}
       {/* Sort and Filters - Only visible for table view */}
       {activeTab === 'table' && (
@@ -115,7 +105,7 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
         </div>
       )}
       {/* Tab Content */}
-      <div className='min-h-[500px]'>
+      <div className='h-mobileMap max-h-[500px]'>
         {activeTab === 'map' && (
           <div key='mobile-map' className='h-[500px] relative'>
             <MapView
@@ -127,7 +117,7 @@ const MobileCheckpoints: React.FC<MobileCheckpointsProps> = ({
           </div>
         )}
         {activeTab === 'table' && (
-          <div className='max-h-[500px] overflow-hidden'>
+          <div className='h-mobileMap max-h-[500px] overflow-hidden'>
             <CheckpointTable
               checkpointData={checkpoints}
               selectedCheckpoint={selectedCheckpoint}
