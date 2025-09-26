@@ -23,8 +23,8 @@ export const createMapIcon = (options: MapIconOptions = {}) => {
 
   return L.divIcon({
     html: `<div class="${outerSize} ${bgColor} ${borderWidth} ${borderColor} rounded-full shadow-lg flex items-center justify-center ${animateClass}">
-             <div class="${innerSize} ${innerColor} rounded-full"></div>
-           </div>`,
+          <div class="${innerSize} ${innerColor} rounded-full"></div>
+          </div>`,
     className: 'custom-marker',
     iconSize: [size, size],
     iconAnchor: [size / 2, size / 2],
