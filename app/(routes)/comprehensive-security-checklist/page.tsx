@@ -619,7 +619,7 @@ const ComprehensiveSecurityChecklist: React.FC<
       </p>
 
       <section ref={sourcesRef}>
-        <h2 className='text-xl md:text-2xl font-bold border-b border-black'>
+        <h2 className='text-2xl md:text-3xl font-bold border-b border-black'>
           Sources &amp; Further Reading
         </h2>
 
