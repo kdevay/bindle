@@ -626,6 +626,7 @@ const ComprehensiveSecurityChecklist: React.FC<
         <ul>
           <li>
             <a
+            className='font-medium underline hover:cursor'
               href='https://www.eff.org/deeplinks/2022/05/how-disable-ad-id-tracking-ios-and-android-and-why-you-should-do-it-now'
               target='_blank'
               rel='noopener'
@@ -635,6 +636,7 @@ const ComprehensiveSecurityChecklist: React.FC<
           </li>
           <li>
             <a
+            className='font-medium underline hover:cursor'
               href='https://www.eff.org/deeplinks/2022/08/how-ad-tech-became-cop-spy-tech'
               target='_blank'
               rel='noopener'
@@ -644,6 +646,7 @@ const ComprehensiveSecurityChecklist: React.FC<
           </li>
           <li>
             <a
+            className='font-medium underline hover:cursor'
               href='https://www.eff.org/deeplinks/2023/11/debunking-myth-anonymous-data'
               target='_blank'
               rel='noopener'
@@ -653,6 +656,7 @@ const ComprehensiveSecurityChecklist: React.FC<
           </li>
           <li>
             <a
+            className='font-medium underline hover:cursor'
               href='https://digitaldefensefund.org'
               target='_blank'
               rel='noopener'
@@ -662,6 +666,17 @@ const ComprehensiveSecurityChecklist: React.FC<
           </li>
           <li>
             <a
+            className='font-medium underline hover:cursor'
+              href='https://activistchecklist.org/'
+              target='_blank'
+              rel='noopener'
+            >
+              Activist Checklist — Digital and Physical Security Checklist broken down by category of use
+            </a>
+          </li>
+          <li>
+            <a
+            className='font-medium underline hover:cursor'
               href='https://arxiv.org/abs/2204.03556'
               target='_blank'
               rel='noopener'
@@ -672,6 +687,7 @@ const ComprehensiveSecurityChecklist: React.FC<
           </li>
           <li>
             <a
+            className='font-medium underline hover:cursor'
               href='https://arxiv.org/abs/2407.14938'
               target='_blank'
               rel='noopener'
@@ -681,6 +697,7 @@ const ComprehensiveSecurityChecklist: React.FC<
           </li>
           <li>
             <a
+            className='font-medium underline hover:cursor'
               href='https://www.cs.cornell.edu/~shmat/shmat_ndss16.pdf'
               target='_blank'
               rel='noopener'
