@@ -19,15 +19,23 @@ export default function Routes() {
           />
         }
       />
-      <div>
+      <div className='flex flex-col gap-4 my-2'>
         <p>
-        For the safety and convenience of our users, we only included routes which met the following criteria:
+        The information listed on the bandana and this website are not intended to be a comprehensive list of routes or modes of travel. 
+        Instead, the listed departure cities, destination cities, and travel modes offer a snapshot of the many ways people move—whether 
+        to access healthcare, evacuate during storms or other climate emergencies, reunite with family, or seek safety and support.
       </p>
+        
+      <p>These routes were selected with the following considerations in mind:</p>
       <ul>
-        <li>Greyhound routes with one or zero (1-0) transfers</li>
-        <li>Direct flights</li>
-        <li>Driving routes of less than 12 hours</li>
+        <li>They reflect pathways people already use to access healthcare and essential services</li>
+        <li>Travel needs and options vary widely; no single mode of travel works for everyone</li>
+        <li>People may be traveling alone or with partners, children, or other chosen or biological family</li>
+        <li>Risk, accessibility, and feasibility can differ based on factors such as citizenship status, age, disability, or personal circumstances</li>
       </ul>
+        <p>
+        For the safety and convenience of our users, we prioritized direct flights, Amtrak or bus routes with no more than 1 transfer, and driving routes under 12 hours. The driving routes largely reflect interstate travel, rather than highways or backroads. We would love to incorporate other modes of travel, other routes, and other departure and destination cities, and may do so in the future as needs arise.
+      </p>
       </div>
       {travelRoutes.map((route: TravelRoute) => (
         <RouteCard key={route.origin} route={route} />
@@ -35,3 +43,4 @@ export default function Routes() {
     </PageLayout>
   );
 }
+
