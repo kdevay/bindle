@@ -1,15 +1,19 @@
+import { NavSlug } from '../utils/constants/routes';
+import Footer from './Footer';
 import Header from './Header';
 
 interface PageLayoutProps {
   children: React.ReactNode;
   heading?: string | React.ReactNode;
   contentStyles?: string;
+  currentPage: NavSlug;
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   contentStyles,
   heading,
+  currentPage,
 }) => {
   return (
     <div className='flex justify-center items-center bg-natural'>
@@ -20,6 +24,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 
           {children}
         </main>
+        <Footer currentPage={currentPage} />
       </div>
     </div>
   );
