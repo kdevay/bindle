@@ -14,7 +14,7 @@ interface NavigationAppsProps {}
 const NavigationApps: React.FC<NavigationAppsProps> = () => {
   return (
     <PageLayout
-      currentPage='navigation'
+      currentPage='navigation-apps'
       heading='How to get around without being tracked'
       contentStyles='flex flex-col gap-4 items-start sm:items-start'
     >
