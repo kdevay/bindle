@@ -12,8 +12,10 @@ const ComprehensiveSecurityChecklist: React.FC<
   const scrollToSources = () => {
     sourcesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
   return (
     <PageLayout
+      currentPage='comprehensive-security-checklist'
       heading='Comprehensive Security Checklist'
       contentStyles='flex flex-col gap-4'
     >

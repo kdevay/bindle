@@ -2,11 +2,10 @@ import Link from 'next/link';
 import PageLayout from '../components/PageLayout';
 import About from '../components/About';
 import NavBar from '../components/NavBar';
-import NavFooter from '../components/NavFooter';
 
 export default function Home() {
   return (
-    <PageLayout contentStyles='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
+    <PageLayout currentPage='/' contentStyles='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
       <About />
       <NavBar currentPage='home' />
 
@@ -62,7 +61,6 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <NavFooter currentPage='home' />
     </PageLayout>
   );
 }

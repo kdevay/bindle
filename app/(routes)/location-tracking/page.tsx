@@ -7,8 +7,9 @@ import TextAndImageGrid from './TextAndImageGrid';
 interface LocationTrackingProps {}
 
 const LocationTracking: React.FC<LocationTrackingProps> = () => {
+
   return (
-    <PageLayout contentStyles='flex flex-col gap-8 items-center sm:items-start'>
+    <PageLayout currentPage='location-tracking' contentStyles='flex flex-col gap-8 items-center sm:items-start'>
       <Hero
         title='Why should I care about location tracking?'
         imageElement={
