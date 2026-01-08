@@ -1,6 +1,7 @@
 const navLinks = [
   { href: '/', label: 'Home', slug: 'home' },
   { href: '/checkpoints', label: 'Checkpoints', slug: 'checkpoints' },
+  { href: '/routes', label: 'Routes', slug: 'routes' },
   { href: '/location-tracking', label: 'Location Tracking', slug: 'location' },
   { href: '/navigation-apps', label: 'Navigation Apps', slug: 'navigation' },
   {
