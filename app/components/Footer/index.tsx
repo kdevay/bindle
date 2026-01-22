@@ -11,7 +11,7 @@ const Footer: React.FC<FooterProps> =  ({ currentPage }) => {
   const links = navLinks.filter(link => link.slug !== currentPage);
 
   return (
-    <footer className='border-t border-dotted py-4 w-full sticky bottom-0 z-20'>
+    <footer className='border-t flex justify-between border-black pt-6 pb-4 w-full mt-2 z-20'>
       <nav className='flex flex-col gap-2 items-start justify-between'>
         {links.map(link => (
           <Link
@@ -28,6 +28,20 @@ const Footer: React.FC<FooterProps> =  ({ currentPage }) => {
           </Link>
         ))}
       </nav>
+      <div className='flex flex-col w-[300px]'>
+        <h1 className='text-2xl md:text-3xl font-bold pb-2 text-right'>Bindle</h1>
+        <div className='flex flex-col gap-2'>
+          <p>
+          This site and the travel bandanna are a volunteer-driven project.
+          </p>
+          <p>
+            All code is open source and available on <Link href='https://github.com/kdevay/bindle' className='underline font-bold'>GitHub</Link>.
+          </p>
+          <p>
+            We welcome contributions and feedback.
+          </p>
+        </div>
+      </div>
     </footer>
   );
 };
